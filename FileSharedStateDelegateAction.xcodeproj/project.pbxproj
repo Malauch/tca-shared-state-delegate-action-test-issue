@@ -12,19 +12,11 @@
 		A4DCBC6E2B72475C00351A47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DCBC6D2B72475C00351A47 /* Assets.xcassets */; };
 		A4DCBC712B72475C00351A47 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DCBC702B72475C00351A47 /* Preview Assets.xcassets */; };
 		A4DCBC7B2B72475D00351A47 /* FileSharedStateDelegateActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCBC7A2B72475D00351A47 /* FileSharedStateDelegateActionTests.swift */; };
-		A4DCBC852B72475D00351A47 /* FileSharedStateDelegateActionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCBC842B72475D00351A47 /* FileSharedStateDelegateActionUITests.swift */; };
-		A4DCBC872B72475D00351A47 /* FileSharedStateDelegateActionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCBC862B72475D00351A47 /* FileSharedStateDelegateActionUITestsLaunchTests.swift */; };
+		A4DCBC952B7247F900351A47 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A4DCBC942B7247F900351A47 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A4DCBC772B72475D00351A47 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4DCBC5E2B72475B00351A47 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4DCBC652B72475B00351A47;
-			remoteInfo = FileSharedStateDelegateAction;
-		};
-		A4DCBC812B72475D00351A47 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4DCBC5E2B72475B00351A47 /* Project object */;
 			proxyType = 1;
@@ -41,9 +33,6 @@
 		A4DCBC702B72475C00351A47 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A4DCBC762B72475D00351A47 /* FileSharedStateDelegateActionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileSharedStateDelegateActionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DCBC7A2B72475D00351A47 /* FileSharedStateDelegateActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSharedStateDelegateActionTests.swift; sourceTree = "<group>"; };
-		A4DCBC802B72475D00351A47 /* FileSharedStateDelegateActionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileSharedStateDelegateActionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4DCBC842B72475D00351A47 /* FileSharedStateDelegateActionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSharedStateDelegateActionUITests.swift; sourceTree = "<group>"; };
-		A4DCBC862B72475D00351A47 /* FileSharedStateDelegateActionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSharedStateDelegateActionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +40,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DCBC952B7247F900351A47 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A4DCBC732B72475D00351A47 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4DCBC7D2B72475D00351A47 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,7 +59,6 @@
 			children = (
 				A4DCBC682B72475B00351A47 /* FileSharedStateDelegateAction */,
 				A4DCBC792B72475D00351A47 /* FileSharedStateDelegateActionTests */,
-				A4DCBC832B72475D00351A47 /* FileSharedStateDelegateActionUITests */,
 				A4DCBC672B72475B00351A47 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +68,6 @@
 			children = (
 				A4DCBC662B72475B00351A47 /* FileSharedStateDelegateAction.app */,
 				A4DCBC762B72475D00351A47 /* FileSharedStateDelegateActionTests.xctest */,
-				A4DCBC802B72475D00351A47 /* FileSharedStateDelegateActionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,15 +99,6 @@
 			path = FileSharedStateDelegateActionTests;
 			sourceTree = "<group>";
 		};
-		A4DCBC832B72475D00351A47 /* FileSharedStateDelegateActionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A4DCBC842B72475D00351A47 /* FileSharedStateDelegateActionUITests.swift */,
-				A4DCBC862B72475D00351A47 /* FileSharedStateDelegateActionUITestsLaunchTests.swift */,
-			);
-			path = FileSharedStateDelegateActionUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +115,9 @@
 			dependencies = (
 			);
 			name = FileSharedStateDelegateAction;
+			packageProductDependencies = (
+				A4DCBC942B7247F900351A47 /* ComposableArchitecture */,
+			);
 			productName = FileSharedStateDelegateAction;
 			productReference = A4DCBC662B72475B00351A47 /* FileSharedStateDelegateAction.app */;
 			productType = "com.apple.product-type.application";
@@ -165,24 +140,6 @@
 			productReference = A4DCBC762B72475D00351A47 /* FileSharedStateDelegateActionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A4DCBC7F2B72475D00351A47 /* FileSharedStateDelegateActionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4DCBC902B72475D00351A47 /* Build configuration list for PBXNativeTarget "FileSharedStateDelegateActionUITests" */;
-			buildPhases = (
-				A4DCBC7C2B72475D00351A47 /* Sources */,
-				A4DCBC7D2B72475D00351A47 /* Frameworks */,
-				A4DCBC7E2B72475D00351A47 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4DCBC822B72475D00351A47 /* PBXTargetDependency */,
-			);
-			name = FileSharedStateDelegateActionUITests;
-			productName = FileSharedStateDelegateActionUITests;
-			productReference = A4DCBC802B72475D00351A47 /* FileSharedStateDelegateActionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +157,6 @@
 						CreatedOnToolsVersion = 15.1;
 						TestTargetID = A4DCBC652B72475B00351A47;
 					};
-					A4DCBC7F2B72475D00351A47 = {
-						CreatedOnToolsVersion = 15.1;
-						TestTargetID = A4DCBC652B72475B00351A47;
-					};
 				};
 			};
 			buildConfigurationList = A4DCBC612B72475B00351A47 /* Build configuration list for PBXProject "FileSharedStateDelegateAction" */;
@@ -215,13 +168,15 @@
 				Base,
 			);
 			mainGroup = A4DCBC5D2B72475B00351A47;
+			packageReferences = (
+				A4DCBC932B7247F900351A47 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = A4DCBC672B72475B00351A47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A4DCBC652B72475B00351A47 /* FileSharedStateDelegateAction */,
 				A4DCBC752B72475D00351A47 /* FileSharedStateDelegateActionTests */,
-				A4DCBC7F2B72475D00351A47 /* FileSharedStateDelegateActionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,13 +192,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A4DCBC742B72475D00351A47 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4DCBC7E2B72475D00351A47 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,15 +218,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4DCBC7C2B72475D00351A47 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4DCBC872B72475D00351A47 /* FileSharedStateDelegateActionUITestsLaunchTests.swift in Sources */,
-				A4DCBC852B72475D00351A47 /* FileSharedStateDelegateActionUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,11 +225,6 @@
 			isa = PBXTargetDependency;
 			target = A4DCBC652B72475B00351A47 /* FileSharedStateDelegateAction */;
 			targetProxy = A4DCBC772B72475D00351A47 /* PBXContainerItemProxy */;
-		};
-		A4DCBC822B72475D00351A47 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4DCBC652B72475B00351A47 /* FileSharedStateDelegateAction */;
-			targetProxy = A4DCBC812B72475D00351A47 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -512,42 +446,6 @@
 			};
 			name = Release;
 		};
-		A4DCBC912B72475D00351A47 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W64GE43S92;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.malauch.FileSharedStateDelegateActionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FileSharedStateDelegateAction;
-			};
-			name = Debug;
-		};
-		A4DCBC922B72475D00351A47 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W64GE43S92;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.malauch.FileSharedStateDelegateActionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FileSharedStateDelegateAction;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,16 +476,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4DCBC902B72475D00351A47 /* Build configuration list for PBXNativeTarget "FileSharedStateDelegateActionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4DCBC912B72475D00351A47 /* Debug */,
-				A4DCBC922B72475D00351A47 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A4DCBC932B7247F900351A47 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = revision;
+				revision = aff3ca47a48b19b6adfb5ed38f6474d15b8bec9f;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A4DCBC942B7247F900351A47 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4DCBC932B7247F900351A47 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A4DCBC5E2B72475B00351A47 /* Project object */;
 }
