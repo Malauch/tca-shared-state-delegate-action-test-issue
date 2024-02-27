@@ -2,64 +2,65 @@ import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-struct ContentFeature {
+struct ParentFeature {
   @ObservableState
   struct State: Equatable {
-    @Shared(.fileStorage(.count)) var count = 0
-    var status = false
+    @Shared(.fileStorage(.count)) var count = 0  // Not used in child feature.
+    var status = false  // Mutated via delegate action sent from child feature.
     
-    var counter = CounterFeature.State()
+    var child = ChildFeature.State()
   }
   
   enum Action {
-    case counter(CounterFeature.Action)
+    case child(ChildFeature.Action)
   }
   
   var body: some Reducer<State, Action> {
-    Scope(state: \.counter, action: \.counter) {
-      CounterFeature()
+    Scope(state: \.child, action: \.child) {
+      ChildFeature()
     }
     
     Reduce { state, action in
       switch action {
-      case .counter(.delegate(let delegateAction)):
+      case .child(.delegate(let delegateAction)):
         switch delegateAction {
         case .toggleStatus:
-          state.count += 10
+          state.count += 1
           state.status.toggle()
           return .none
         }
         
-      case .counter:
+      case .child:
         return .none
       }
     }
   }
 }
 
-struct ContentView: View {
-  let store: StoreOf<ContentFeature>
+struct ParentView: View {
+  let store: StoreOf<ParentFeature>
   
   var body: some View {
     VStack {
-      CounterView(store: self.store.scope(state: \.counter, action: \.counter))
+      ChildView(store: self.store.scope(state: \.child, action: \.child))
+      Text("Values from parent feature:")
       Text("Status: \(self.store.status.description)")
-      Text("Count from parent: \(self.store.count)")
+      Text("Count: \(self.store.count)")
     }
   }
 }
 
 
 @Reducer
-struct CounterFeature {
+struct ChildFeature {
   @ObservableState
   struct State: Equatable {
-    @Shared(.fileStorage(.count)) var count = 0
+    var random = 0.0
   }
   
   enum Action {
     case delegate(Delegate)
-    case increaseButtonTapped
+    case randomValueButtonTapped
     case toggleStatusButtonTapped
     
     @CasePathable
@@ -73,8 +74,8 @@ struct CounterFeature {
       switch action {
       case .delegate:
         return .none
-      case .increaseButtonTapped:
-        state.count += 1
+      case .randomValueButtonTapped:
+        state.random = Double.random(in: 0...1)
         return .none
       case .toggleStatusButtonTapped:
         return .send(.delegate(.toggleStatus))
@@ -83,24 +84,24 @@ struct CounterFeature {
   }
 }
 
-struct CounterView: View {
-  let store: StoreOf<CounterFeature>
+struct ChildView: View {
+  let store: StoreOf<ChildFeature>
   
   var body: some View {
     Form {
-      Text("Count: \(store.count)")
-      Button("Increase") { store.send(.increaseButtonTapped) }
-      Button("Toggle status") { store.send(.toggleStatusButtonTapped) }
+      Text("Random value: \(store.random)")
+      Button("New random value") { store.send(.randomValueButtonTapped) }
+      Button("Toggle parent feature status") { store.send(.toggleStatusButtonTapped) }
     }
   }
 }
 
 #Preview {
-  ContentView(
+  ParentView(
     store: Store(
-      initialState: ContentFeature.State()
+      initialState: ParentFeature.State()
     ) {
-      ContentFeature()
+      ParentFeature()
     }
   )
 }
